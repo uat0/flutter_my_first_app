@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-/// Палитра из макета Figma.
 class AppColors {
   static const background = Color(0xFFF5F5F5); // PageBackgroundColor
   static const primary = Color(0xFF4CAF50); // PrimaryColor
@@ -16,7 +14,7 @@ class AppColors {
 
 const double kCardRadius = 10;
 const double kButtonRadius = 8;
-const double kMaxContentWidth = 420; // чтобы на планшетах не растягивалось
+const double kMaxContentWidth = 420;
 
 const List<BoxShadow> kCardShadow = [
   BoxShadow(color: Color(0x22000000), blurRadius: 12, offset: Offset(0, 2)),
@@ -35,7 +33,7 @@ ThemeData buildTheme() {
 
   return base.copyWith(
     scaffoldBackgroundColor: AppColors.background,
-    textTheme: GoogleFonts.interTextTheme(base.textTheme).apply(
+    textTheme: base.textTheme.apply(
       bodyColor: AppColors.text,
       displayColor: AppColors.text,
     ),
@@ -65,7 +63,7 @@ ThemeData buildTheme() {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(kButtonRadius),
         ),
-        textStyle: GoogleFonts.inter(
+        textStyle: const TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w700,
           letterSpacing: 0.3,
